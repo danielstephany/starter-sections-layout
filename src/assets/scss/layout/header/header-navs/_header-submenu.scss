@@ -1,0 +1,61 @@
+.header-subnav {
+	background: $sub-nav-bg;
+	display: none;
+	min-width: 200px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	&__item {
+		display: block;
+		& > a {
+			background: transparent;
+			display: block;
+			padding: 10px;
+			transition: $header-hover;
+			color: $menu-text-color;
+			cursor: pointer;
+			&:hover {
+				background: darken($sub-nav-bg, 10%);
+			}
+		}
+		&.active {
+			& > a {
+				color: $active-menu-text;
+			}
+		}
+	}
+}
+
+
+@media (max-width: $header-breakpoint){
+	.header-subnav {
+		background: $sub-nav-bg;
+		display: none;
+		min-width: initial;
+		position: static;
+		top: initial;
+		right: initial;
+		left: initial;
+		&__item {
+			display: block;
+			& > a {
+				background: transparent;
+				display: block;
+				padding: 10px;
+				transition: $header-hover;
+				&:hover {
+					background: $sub-nav-bg; 
+				}
+			}
+			&.active {
+				& > a {
+				
+				}
+			}
+		}
+	}
+}

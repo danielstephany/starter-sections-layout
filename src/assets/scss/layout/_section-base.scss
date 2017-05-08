@@ -1,0 +1,13 @@
+.section {
+    display: block;
+    width: 100%;
+    &:nth-of-type(even) {
+        background: $grey-bg;
+    }
+    .content-container {
+        display: block;
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}

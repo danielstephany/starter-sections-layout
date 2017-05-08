@@ -1,0 +1,122 @@
+/* base header styles **************************************************************
+************************************************************************************/
+//mobile breakpoint
+$header-breakpoint: 768px;
+//colors
+$header-bg: rgba(0,0,0,0.2);
+$mobile-nav-bg: #ccc;
+$sub-nav-bg: #bbb;
+$sub2-nav-bg: lighten($sub-nav-bg, 2%);
+$menu-text-color: #fff;
+$active-menu-text: #000;
+$toggle-color: #000;
+//transitions
+$header-hover: 0.3s linear;
+
+.header {
+	display: block;
+	width: 100%;
+	background: $header-bg;
+	height: 80px;
+	ul {
+		list-style: none;
+	}
+	a:focus {
+		outline: initial;
+	}
+	a:active {
+		color: inherit;
+	}
+}
+.header__container {
+	display: block;
+	width: 100%;
+	padding: 0 15px;
+	position: relative;
+	height: 100%;
+}
+
+.header-nav-container { 
+	display: block;
+	width: 75%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.header-logo {
+	display: inline-block;
+	h1 {
+		margin: 0;
+		padding: 20px 0px;
+	}
+}
+
+.mobile-nav-head {
+	display: none;
+}
+.nav-overlay{
+	display: none;
+}
+
+@media (max-width: $header-breakpoint){
+	.header {
+	height: 60px;
+	}
+	.header__container {
+	}
+	.header-nav-container { 
+		background: $mobile-nav-bg;
+		display: block;
+		width: 75%;
+		position: fixed;
+		top: 0;
+		right: -75%;
+		bottom: 0;
+		z-index: 10;
+		transition: 0.4s ease;
+		overflow: scroll;
+	}
+	.header-logo {
+		h1 {
+			padding: 10px 0px;
+		}
+	}
+	.mobile-nav-head {
+		display: block;
+		min-height: 60px;
+		width: 100%;
+		position: relative;
+		padding: 15px 15px;
+		h2 {
+			margin: 0;
+		}
+	}
+	.nav-overlay {
+		display: block;
+		width: 100%;
+		background: transparent;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transition: 0.3s linear;
+	}
+	.nav-active {
+		overflow: hidden;
+		.header {
+			.header-nav-container {
+				right: 0;
+			}
+			.nav-overlay {
+				background: rgba(0,0,0,0.1);
+			}
+		}
+	}
+}
+
+
+
+

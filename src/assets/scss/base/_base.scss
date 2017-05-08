@@ -1,0 +1,23 @@
+/* _base.scss is used to apply style to the base elements of the project no classes ids should be used in this file */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	height: 2000px;
+}
+
+a {
+	text-decoration: none;
+}

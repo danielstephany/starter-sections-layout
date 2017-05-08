@@ -1,0 +1,54 @@
+.header-subnav2 {
+	background: $sub2-nav-bg;
+	display: none;
+	min-width: 200px;
+	padding: 0;
+	margin: 0;
+	&__item {
+		display: block;
+		a {
+			background: transparent;
+			display: block;
+			padding: 10px 10px 10px 30px;
+			transition: $header-hover;
+			color: $menu-text-color;
+			cursor: pointer;
+			&:hover {
+				background: darken($sub2-nav-bg, 10%);
+			}
+		}
+		&.active {
+			& > a {
+				color: $active-menu-text;
+			}
+		}
+	}
+}
+
+
+@media (max-width: $header-breakpoint){
+	.header-subnav2 {
+		background: $sub2-nav-bg;
+		display: none;
+		min-width: 200px;
+		padding: 0;
+		margin: 0;
+		&__item {
+			display: block;
+			a {
+				background: transparent;
+				display: block;
+				padding: 10px 10px 10px 30px;
+				transition: $header-hover;
+				&:hover {
+					background: $sub2-nav-bg;
+				}
+			}
+			&.active {
+				& > a {
+				
+				}
+			}
+		}
+	}
+}
