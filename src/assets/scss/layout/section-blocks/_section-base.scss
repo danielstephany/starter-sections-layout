@@ -1,0 +1,36 @@
+$desktop-spaceing: 60px;
+$tablet-spacing: 50px;
+$mobile-spacing: 40px;
+
+.section {
+    display: block;
+    width: 100%;
+    position: relative;
+    &:nth-of-type(even) {
+        background: $grey-bg;
+    }
+    .content-container {
+        display: block;
+        width: 100%;
+        margin-top: $desktop-spaceing;
+        margin-bottom: $desktop-spaceing;
+    }
+}
+
+@media (max-width: $screen-md){
+    .section {
+        .content-container {
+            margin-top: $tablet-spacing;
+            margin-bottom: $tablet-spacing;
+        }
+    }
+}
+
+@media (max-width: $screen-sm){
+    .section {
+        .content-container {
+            margin-top: $mobile-spacing;
+            margin-bottom: $mobile-spacing;
+        }
+    }
+}

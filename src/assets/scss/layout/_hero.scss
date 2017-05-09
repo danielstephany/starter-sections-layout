@@ -1,0 +1,12 @@
+.hero {
+    background-size:  cover !important;
+    padding: 60px 0;
+    min-height: 500px;
+    .hero-content {
+        display: block;
+        max-width: 750px;
+        margin: 0 auto;
+        text-align: center;
+        color: $white;
+    }
+}

@@ -1,0 +1,36 @@
+[class^="split-img"] {
+    display: inline-block;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-size: cover !important;
+}
+.split-img-right {
+    right: 0;
+    & + .container {
+         [class^="col-"] {
+            padding-right: 30px;
+        }
+    }
+}
+.split-img-left {
+    left: 0;
+    & + .container {
+        [class^="col-"] {
+            padding-left: 30px;
+        }
+    }
+}
+
+
+@media (max-width: $screen-sm){
+    [class^="split-img"] {
+        display: block;
+        min-height: 300px;
+        width: 100%;
+        position: static;
+        top: initial;
+        bottom: initial;
+    }
+}

@@ -18,10 +18,13 @@ const plumber = 	   require('gulp-plumber'); //error handler for gulp
 var vendorScripts = [
 		'bower_vendors/jquery/dist/jquery.min.js',
 		'bower_vendors/jquery-touch-events/src/jquery.mobile-events.min.js',
-		'bower_vendors/bootstrap-sass/assets/javascripts/bootstrap.js'
+		'./src/assets/js/vendors/bootstrap.js',
+		'./src/assets/js/vendors/img-load.js'
 		];
 var mainScripts = [
-	'./src/assets/js/main/header_nav_ctrls.js'];
+	'./src/assets/js/main/header_nav_ctrls.js',
+	'./src/assets/js/main/vertical-center.js'
+	];
 
 var scriptFeed = vendorScripts.concat(mainScripts);
 
@@ -67,6 +70,15 @@ gulp.task('minifyScripts', function() {
 	.pipe(browserSync.stream());
 });
 
+var supported = [
+	'last 5 versions',
+	'safari >= 8',
+	'ie >= 9',
+	'ff >= 20',
+	'ios 6',
+	'android 4'
+];
+
 // compiles sass from scss/main.scss to main.css
 // adds prefixes with auto prefixer to css
 // writes source maps
@@ -75,7 +87,7 @@ gulp.task('compileSass', function() {
 	return gulp.src('src/assets/scss/main.scss')
 	.pipe(maps.init())
 	.pipe(sass())
-	.pipe(autoprefixer({browsers:['last 2 versions']}))
+	.pipe(autoprefixer({browsers: supported, add: true}))
 	.pipe(maps.write('./'))
 	.pipe(gulp.dest('dist/assets/css'));
 });
@@ -90,8 +102,9 @@ gulp.task('minifyCss', function() {
 	.pipe(plumber())
 	.pipe(maps.init())
 	.pipe(sass())
-	.pipe(autoprefixer({browsers:['last 5 versions', 'IE 9']}))
-	.pipe(cssnano())
+	.pipe(cssnano({
+		autoprefixer: {browsers: supported, add: true}
+	}))
 	.pipe(rename("main.min.css"))
 	.pipe(maps.write('./'))
 	.pipe(gulp.dest('./dist/assets/css'))
