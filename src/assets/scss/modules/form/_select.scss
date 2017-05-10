@@ -1,0 +1,58 @@
+.select {
+  position: relative;
+  background: $form-input-bg;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: 8px;
+    margin-right: 20px;
+    border-right: 2px solid $default-text;
+    border-bottom: 2px solid $default-text;
+    transform: rotate(45deg);
+    z-index: 0;
+  }
+  .form-control {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    font-weight: 300;
+    color: $default-text;
+  }
+  select::-ms-expand {
+    display: none;
+    cursor: pointer;
+  }
+}
+
+
+.is-ie9 {
+  .select {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.form-control::-webkit-input-placeholder {
+  color: lighten($default-text, 12%);
+  font-weight: 300;
+}
+.form-control::-moz-placeholder {
+  color: lighten($default-text, 12%);
+  font-weight: 300;
+}
+.form-control:-ms-input-placeholder {
+  color: lighten($default-text, 12%);
+  font-weight: 300;
+}
+.form-control:-moz-placeholder {
+  color: lighten($default-text, 12%);
+  font-weight: 300;
+}

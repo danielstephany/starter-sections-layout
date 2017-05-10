@@ -1,0 +1,32 @@
+$btn-bg: $gray-lite;
+$btn-text-color: $white;
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: initial;
+  border: 0 solid transparent;
+  color: $white;
+  padding: 6px 15px;
+  background: $btn-bg;
+  font-size: 16px;
+  transition: background 0.2s linear;
+  &:visited {
+    color: $btn-text-color;
+  }
+  &:focus {
+    color: $btn-text-color;
+    border: 1px solid $blue;
+    outline: initial;
+  }
+  &:active {
+    box-shadow: initial;
+  }
+  &:hover {
+    background: lighten($btn-bg, 8%);
+    color: $btn-text-color;
+  }
+}
+
+
+

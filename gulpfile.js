@@ -19,11 +19,13 @@ var vendorScripts = [
 		'bower_vendors/jquery/dist/jquery.min.js',
 		'bower_vendors/jquery-touch-events/src/jquery.mobile-events.min.js',
 		'./src/assets/js/vendors/bootstrap.js',
-		'./src/assets/js/vendors/img-load.js'
+		'./src/assets/js/vendors/img-load.js',
+		'./src/assets/js/vendors/bootstrap-datepicker.js'
 		];
 var mainScripts = [
 	'./src/assets/js/main/header_nav_ctrls.js',
-	'./src/assets/js/main/vertical-center.js'
+	'./src/assets/js/main/vertical-center.js',
+	'./src/assets/js/main/date-picker-ctrl.js'
 	];
 
 var scriptFeed = vendorScripts.concat(mainScripts);

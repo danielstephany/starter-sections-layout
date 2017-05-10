@@ -1,0 +1,92 @@
+$form-input-bg: $white;
+
+form {
+  position: relative;
+}
+.form-item {
+  margin-bottom: 16px;
+}
+.form-group {
+  margin-bottom: 0px;
+}
+label {
+  color: $default-text;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+.form-control {
+  height: 36px;
+  padding: 6px 6px;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 16px;
+  background: $form-input-bg;
+  text-indent: 0;
+  border: 1px solid $grey-lite;
+  -webkit-appearance: none;
+  &:focus {
+    border-color: $blue;
+  }
+}
+.text-box {
+  border-radius: 20px;
+  border: 1px solid;
+  width: 100%;
+  padding: 0 10px 0 0;
+  background: $white;
+  textarea.form-control {
+    padding: 8px 20px;
+  }
+}
+textarea.form-control {
+  border: 1px solid $grey-lite;
+  resize: none;
+  background: $form-input-bg;
+  padding: 8px;
+  min-height: 120px;
+}
+
+.input-error {
+  border-color: $red !important;
+}
+
+.error {
+  display: inline-block;
+  color: $red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@media (max-width: $screen-sm) {
+  label {
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  .form-control {
+    height: 34px;
+    padding: 6px 6px;
+  }
+  .form-items {
+    margin-bottom: 13px;
+  }
+}
+
+/* honeypot ***********************************************************************/
+
+.honeypot {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0px solid transparent;
+  position: absolute;
+  right: 10000;
+}

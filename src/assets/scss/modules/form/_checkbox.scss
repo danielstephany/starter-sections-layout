@@ -1,0 +1,44 @@
+.checkbox-inline input[type=checkbox],
+.checkbox input[type=checkbox],
+input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  &:checked ~ .check-btn {
+    background: $grey-lite;
+    &:before {
+      content: '\f00c';
+    }
+  }
+  &:disabled {
+    background: transparent;
+    border: 0 solid transparent;
+    & + span {
+      cursor: not-allowed;
+    }
+  }
+}
+.check-btn {
+  border-radius: 2px;
+  border: 1px solid $grey-lite;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  margin-right: 5px;
+  vertical-align: text-bottom;
+  transition: 0.2s linear;
+  background: $white;
+  position: relative;
+  cursor: pointer;
+  &:before {
+    background: transparent;
+    display: inline;
+    content: "";
+    font-family: "fontawesome", sans-serif;
+    font-size: 13px;
+    color: $white;
+    position: absolute;
+    top: -1px;
+    right: 1px;
+  }
+}

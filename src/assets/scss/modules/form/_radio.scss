@@ -1,0 +1,26 @@
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  &:checked ~ .radio-btn {
+    background-color: $gray-lite;
+    box-shadow: inset 0 0 0 3.5px $white;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.radio-btn {
+  box-shadow: inset 0 0 0 18px $white;
+  border-radius: 50%;
+  border: 1px solid $gray-lite;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: $white;
+  margin-left: 0px;
+  margin-right: 5px;
+  vertical-align: text-bottom;
+  transition: 0.2s linear;
+  cursor: pointer;
+}

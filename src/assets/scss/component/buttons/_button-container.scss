@@ -1,0 +1,17 @@
+.button-container-left,
+.button-container-right,
+.button-container-center,
+.button-container {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+}
+.button-container-left {
+  text-align: left;
+}
+.button-container-right {
+  text-align: right;
+}
+.button-container-center {
+  text-align: center;
+}
