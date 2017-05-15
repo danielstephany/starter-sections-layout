@@ -27,6 +27,24 @@
 				color: $active-menu-text;
 			}
 		}
+		.subnav-toggle {
+			&:after {
+				display: inline-block;
+				content: '+';
+				line-height: 10px;
+				width: 10px;
+				height: 14px;
+				margin-left: 6px;
+				margin-bottom: 3px;
+			}
+		}
+		&.active {
+			& > .subnav-toggle {
+				&:after {
+					content: '–';
+				}
+			}
+		}
 	}
 }
 
